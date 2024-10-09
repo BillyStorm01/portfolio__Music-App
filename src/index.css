@@ -42,9 +42,9 @@ html {
   --clr-slate800: #1e293b;
 }
 
-/* General styles for body */
+
 body {
-  margin: 0; /* Remove default margin */
-  overflow: hidden; /* Prevent scrolling if needed */
+  margin: 0; 
+  overflow: hidden; 
 }
 

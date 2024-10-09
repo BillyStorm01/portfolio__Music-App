@@ -71,7 +71,7 @@
 /* md */
 @media (min-width: 768px) {
   .music__container {
-    height: 34rem; /* Reduced height */
+    height: 34rem; 
     width: calc(37rem / 1.19);
   }
 
@@ -84,7 +84,7 @@
 /* lg */
 @media (min-width: 1024px) {
   .music__container {
-    height: 34rem; /* Reduced height */
+    height: 34rem;
     width: calc(37rem / 1.19);
   }
 

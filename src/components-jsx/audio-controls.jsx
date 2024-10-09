@@ -32,7 +32,6 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
         setCurrentTime(newTime);
     };
 
-    // Calculate remaining time
     const remainingTime = duration ? duration - currentTime : 0;
 
     return (

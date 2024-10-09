@@ -8,7 +8,6 @@
     justify-content: center;
 }
 
-/* Progress Bar Styles */
 .progress-container {
     background: #e0e0e0;
     height: 10px;
@@ -38,12 +37,12 @@
 .timestamp-container {
     display: flex;
     justify-content: space-between;
-    width: 80%; /* Adjust as necessary */
-    margin: 0.5rem auto; /* Centered with some margin */
-    color: var(--clr-dark); /* Adjust color as needed */
+    width: 80%; 
+    margin: 0.5rem auto; 
+    color: var(--clr-dark);
 }
 
 .timestamp-container p {
-    font-size: 1rem; /* Adjust size as needed */
-    margin: 0; /* Remove default margins */
+    font-size: 1rem; 
+    margin: 0; 
 }
