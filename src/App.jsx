@@ -68,7 +68,7 @@ function App() {
           <a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <img className="image__container" src="/applemusic.png" alt="Music Icon" />
           </a>
-          <OffCanvas songs={songs} playSong={playSong} /> {/* Pass songs and playSong function */}
+          <OffCanvas songs={songs} playSong={playSong} /> 
           <AudioControls
             handleLeft={handleLeft}
             playSong={playSong}
@@ -76,7 +76,7 @@ function App() {
             setIsPlaying={setIsPlaying}
             isPlaying={isPlaying}
             currentSong={currentSong}
-            audioRef={audioRef} // Pass the audioRef here
+            audioRef={audioRef}
           />
           <audio ref={audioRef}></audio>
         </div>

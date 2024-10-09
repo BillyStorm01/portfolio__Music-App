@@ -42,14 +42,14 @@ button {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background to separate the visualizer */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Add this to your CSS file */
+
 canvas {
-  border: 1px solid white; /* Example styling */
+  border: 1px solid white;
   display: block;
-  margin: 20px auto; /* Center the canvas */
+  margin: 20px auto;
 }
 
 
