@@ -1,0 +1,44 @@
+.offcanvas {
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  width: 100%; 
+  max-width: 325px;
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-2xl);
+  justify-content: center;
+  text-align: center;
+  width: 100%; 
+  padding: 1rem; 
+}
+
+.btn-close {
+   background-color: var(--clr-rose);
+}
+
+.songs__ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 .5em; 
+  position: relative;
+  margin-top: 1.8rem;
+}
+
+.songs__li {
+  list-style: none;
+  margin-bottom: 0.4rem;
+  border: 1px solid var(--clr-slate800);
+  border-radius: .5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  font-weight: 500;
+}
+
+.songs__li:hover {
+  scale: 1;
+}

@@ -37,9 +37,17 @@
 /* xxs */
 @media (min-width: 320px) {
   .music__container {
-    height: 25rem;
+    height: 22.5rem;
     width: calc(22rem / 1.19);
   }
+
+  .image__container {
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14rem;
+  height: 14rem;
+}
 }
 
 /* xs */

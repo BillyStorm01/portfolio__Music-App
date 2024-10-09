@@ -45,7 +45,6 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
                 <span>{Math.floor(currentTime)}s</span>
                 <span>{duration ? Math.floor(duration) : '0'}s</span>
             </div>
-            {/* New p tags for running timestamp and remaining time */}
             <div className="timestamp-container">
                 <p>{Math.floor(currentTime / 60)}:{(Math.floor(currentTime) % 60).toString().padStart(2, '0')} /</p>
                 <p>{Math.floor(remainingTime / 60)}:{(Math.floor(remainingTime) % 60).toString().padStart(2, '0')}</p>

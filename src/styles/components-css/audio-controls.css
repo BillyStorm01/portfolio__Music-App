@@ -24,7 +24,7 @@
 
 .time-container {
     display: flex;
-    font-size: 0.9rem;
+    font-size: 0rem;
 }
 
 .audio-controls__prev,
@@ -37,8 +37,10 @@
 .timestamp-container {
     display: flex;
     justify-content: space-between;
-    width: 80%; 
-    margin: 0.5rem auto; 
+    width: 95%; 
+    position: relative;
+    top: 1%;
+    left: 3%;
     color: var(--clr-dark);
 }
 
@@ -46,3 +48,10 @@
     font-size: 1rem; 
     margin: 0; 
 }
+
+
+/* xs */
+@media (min-width: 475px) {}
+
+/* sm */
+@media (min-width: 640px) {}

@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-//Style Imports
+// Style Imports
 import './styles/modern-normalize.css';
 import './styles/App.css';
-import './styles/components-css/music-container.css'
+import './styles/components-css/music-container.css';
 import './styles/utils.css';
 
-//Component Imports
+// Component Imports
 import AudioControls from './components-jsx/audio-controls';
+import OffCanvas from './components-jsx/off-canvas';
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -36,11 +37,12 @@ function App() {
     }
   }, [isPlaying, currentSong]);
 
-  function playSong() {
-    if (currentSong) {
-      audioRef.current.src = baseURL + currentSong.url;
+  function playSong(song) {
+    if (song) {
+      audioRef.current.src = baseURL + song.url;
       audioRef.current.play();
       setIsPlaying(true);
+      setCurrentSong(song); // Update the current song to the selected one
     }
   }
 
@@ -63,7 +65,10 @@ function App() {
       <div className='background'></div>
       <div className='app__container container'>
         <div className='music__container'>
-          <img className="image__container" src="/applemusic.png" alt="Music Icon" />
+          <a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <img className="image__container" src="/applemusic.png" alt="Music Icon" />
+          </a>
+          <OffCanvas songs={songs} playSong={playSong} /> {/* Pass songs and playSong function */}
           <AudioControls
             handleLeft={handleLeft}
             playSong={playSong}
@@ -75,6 +80,7 @@ function App() {
           />
           <audio ref={audioRef}></audio>
         </div>
+        <h3 style={{textAlign: 'center'}} className='tip'>~ Click the music image to open songs list <br /> or press play ~</h3>
       </div>
     </>
   );
