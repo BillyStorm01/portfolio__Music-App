@@ -1,0 +1,49 @@
+.lower__container {
+    margin-top: auto;
+    width: 80%;
+}
+
+.audio-controls__container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto .5rem;
+}
+
+.progress {
+    background: linear-gradient(84deg, rgba(255,100,37,1) 19%, rgba(225,29,72,1) 93%);
+    height: 100%;
+    border-radius: 5px;
+}
+
+.time-container {
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.audio-controls__prev,
+.audio-controls__pause-play,
+.audio-controls__next {
+    color: var(--clr-slate800);
+    font-size: 2rem;
+}
+
+.timestamp-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Adjust as necessary */
+    margin: 0.5rem auto; /* Centered with some margin */
+    color: var(--clr-dark); /* Adjust color as needed */
+}
+
+.timestamp-container p {
+    font-size: 1rem; /* Adjust size as needed */
+    margin: 0; /* Remove default margins */
+}

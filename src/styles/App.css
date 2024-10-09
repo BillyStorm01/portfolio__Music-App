@@ -1,0 +1,33 @@
+.app__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* Ensure positioning is correct for child elements */
+  z-index: 1; /* Keep it above the blurred background */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height to center content vertically */
+  color: var(--clr-light); /* Text color */
+}
+
+button {
+  display: inline-block;
+  padding: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Background styles */
+.background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  background: url('/applemusicbackground.jpg') no-repeat center center; 
+  background-size: cover;
+  filter: blur(8px); 
+  z-index: -1; 
+}
