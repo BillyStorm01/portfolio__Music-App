@@ -26,10 +26,19 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
         }
     }, [audioRef, isDragging]);
 
-    const handleProgressBarClick = (e) => {
+    const handleProgressBarInteraction = (e) => {
         const progressBar = e.target;
         const totalWidth = progressBar.offsetWidth;
-        const clickX = e.clientX - progressBar.getBoundingClientRect().left;
+        let clientX;
+
+        // Handle both mouse and touch events
+        if (e.type.startsWith('touch')) {
+            clientX = e.touches[0].clientX;  // Get the X coordinate for touch
+        } else {
+            clientX = e.clientX;  // Get the X coordinate for mouse
+        }
+
+        const clickX = clientX - progressBar.getBoundingClientRect().left;
         const newTime = (clickX / totalWidth) * duration;
         audioRef.current.currentTime = newTime;
         setCurrentTime(newTime);
@@ -41,12 +50,27 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
 
     const handleMouseUp = (e) => {
         setIsDragging(false);
-        handleProgressBarClick(e);  // Set time after dragging is done
+        handleProgressBarInteraction(e);  // Set time after dragging is done
     };
 
     const handleMouseMove = (e) => {
         if (isDragging) {
-            handleProgressBarClick(e);  // Update time as you drag
+            handleProgressBarInteraction(e);  // Update time as you drag
+        }
+    };
+
+    const handleTouchStart = () => {
+        setIsDragging(true);
+    };
+
+    const handleTouchEnd = (e) => {
+        setIsDragging(false);
+        handleProgressBarInteraction(e);  // Set time after dragging is done
+    };
+
+    const handleTouchMove = (e) => {
+        if (isDragging) {
+            handleProgressBarInteraction(e);  // Update time as you drag
         }
     };
 
@@ -58,11 +82,14 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
             {/* Progress Bar Section */}
             <div
                 className="progress-container"
-                onClick={handleProgressBarClick}
+                onClick={handleProgressBarInteraction}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={() => setIsDragging(false)}  // Stop dragging if the mouse leaves the area
+                onTouchStart={handleTouchStart}  // Touch start event for mobile
+                onTouchMove={handleTouchMove}    // Touch move event for mobile
+                onTouchEnd={handleTouchEnd}      // Touch end event for mobile
             >
                 <div className="progress" style={{ width: `${(currentTime / duration) * 100}%` }}></div>
             </div>
