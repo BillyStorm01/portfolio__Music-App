@@ -1,8 +1,8 @@
 .music__container {
   border: 2px solid black;
   border-radius: 2rem;
-  height: 40rem;
-  width: 38rem;
+  height: 36rem; 
+  width: 34rem; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +10,7 @@
   position: relative;
   background-color: var(--clr-light);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+  margin-top: 1.5rem; 
 }
 
 .image__container {
@@ -17,8 +18,9 @@
   border: 1px solid var(--clr-rose);
   box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.6);
   position: absolute;
-  height: 15rem;
-  top: 20%;
+  height: 13rem; 
+  width: 13rem; 
+  top: 24%; 
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -26,7 +28,6 @@
 .music__container-CS {
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
   color: var(--clr-dark);
   font-weight: 600;
   font-size: 1.7rem;
@@ -37,65 +38,70 @@
 /* xxs */
 @media (min-width: 320px) {
   .music__container {
-    height: 22.5rem;
-    width: calc(22rem / 1.19);
+    height: 20rem;
+    width: calc(20rem / 1.19);
+    margin-top: 1rem; 
   }
 
   .image__container {
-  top: 14%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 14rem;
-  height: 14rem;
-}
+    top: 15%; 
+    width: 13rem;
+    height: 13rem;
+  }
 
-.music__container-CS {
-  font-size: 1.25rem;
+  .music__container-CS {
+    font-size: 1.25rem;
+    position: relative;
+    top: 10%;
+  }
 }
-
-}
-
 
 /* xs */
 @media (min-width: 475px) {
   .music__container {
-    height: 29rem;
-    width: calc(29rem / 1.19);
+    height: 27rem;
+    width: calc(27rem / 1.19);
+    margin-top: 1.2rem; 
   }
 
   .image__container {
-    width: 20rem;
-    height: 20rem;
+    width: 18rem;
+    height: 18rem;
+    top: 20%; 
   }
 
   .music__container-CS {
-  font-size: 1.5rem;
-}
+    font-size: 1.5rem;
+  }
 }
 
 /* sm */
 @media (min-width: 640px) {
   .music__container {
-    height: 33rem;
-    width: calc(33rem / 1.19);
+    height: 30rem;
+    width: calc(30rem / 1.19);
+    margin-top: 1.3rem;
   }
 
   .image__container {
-    width: 23rem;
-    height: 23rem;
+    width: 20rem;
+    height: 20rem;
+    top: 22%;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
   .music__container {
-    height: 34rem; 
-    width: calc(37rem / 1.19);
+    height: 32rem;
+    width: calc(35rem / 1.19);
+    margin-top: 1.4rem;
   }
 
   .image__container {
-    width: 25rem;
-    height: 25rem;
+    width: 22rem;
+    height: 22rem;
+    top: 23%;
   }
 }
 
@@ -104,13 +110,12 @@
   .music__container {
     height: 34rem;
     width: calc(37rem / 1.19);
+    margin-top: 1.5rem;
   }
 
   .image__container {
-    width: 25rem;
-    height: 25rem;
+    width: 23rem;
+    height: 23rem;
+    top: 24%;
   }
 }
-
-/* 2xl */
-/* @media (min-width: 1536px) {} */

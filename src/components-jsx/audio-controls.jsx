@@ -12,7 +12,7 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
         const audioElement = audioRef.current;
         if (audioElement) {
             const updateTime = () => {
-                if (!isDragging) {  // Only update time when not dragging
+                if (!isDragging) { 
                     setCurrentTime(audioElement.currentTime);
                 }
                 setDuration(audioElement.duration);
@@ -31,11 +31,11 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
         const totalWidth = progressBar.offsetWidth;
         let clientX;
 
-        // Handle both mouse and touch events
+        
         if (e.type.startsWith('touch')) {
-            clientX = e.touches[0].clientX;  // Get the X coordinate for touch
+            clientX = e.touches[0].clientX;  
         } else {
-            clientX = e.clientX;  // Get the X coordinate for mouse
+            clientX = e.clientX;  
         }
 
         const clickX = clientX - progressBar.getBoundingClientRect().left;
@@ -50,12 +50,12 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
 
     const handleMouseUp = (e) => {
         setIsDragging(false);
-        handleProgressBarInteraction(e);  // Set time after dragging is done
+        handleProgressBarInteraction(e);  
     };
 
     const handleMouseMove = (e) => {
         if (isDragging) {
-            handleProgressBarInteraction(e);  // Update time as you drag
+            handleProgressBarInteraction(e); 
         }
     };
 
@@ -65,12 +65,12 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
 
     const handleTouchEnd = (e) => {
         setIsDragging(false);
-        handleProgressBarInteraction(e);  // Set time after dragging is done
+        handleProgressBarInteraction(e);  
     };
 
     const handleTouchMove = (e) => {
         if (isDragging) {
-            handleProgressBarInteraction(e);  // Update time as you drag
+            handleProgressBarInteraction(e); 
         }
     };
 
@@ -86,10 +86,10 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
-                onMouseLeave={() => setIsDragging(false)}  // Stop dragging if the mouse leaves the area
-                onTouchStart={handleTouchStart}  // Touch start event for mobile
-                onTouchMove={handleTouchMove}    // Touch move event for mobile
-                onTouchEnd={handleTouchEnd}      // Touch end event for mobile
+                onMouseLeave={() => setIsDragging(false)}  
+                onTouchStart={handleTouchStart}  
+                onTouchMove={handleTouchMove}    
+                onTouchEnd={handleTouchEnd}     
             >
                 <div className="progress" style={{ width: `${(currentTime / duration) * 100}%` }}></div>
             </div>
