@@ -48,7 +48,13 @@
   width: 14rem;
   height: 14rem;
 }
+
+.music__container-CS {
+  font-size: 1rem;
 }
+
+}
+
 
 /* xs */
 @media (min-width: 475px) {
@@ -61,6 +67,10 @@
     width: 20rem;
     height: 20rem;
   }
+
+  .music__container-CS {
+  font-size: 1.2rem;
+}
 }
 
 /* sm */
