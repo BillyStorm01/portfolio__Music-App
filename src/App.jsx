@@ -80,7 +80,7 @@ function App() {
           />
           <audio ref={audioRef}></audio>
         </div>
-        <h3 style={{textAlign: 'center'}} className='tip'>~ Click the music image to open songs list <br /> or press play ~</h3>
+        <h3 style={{textAlign: 'center'}} className='tip'>~ Click the music image to open songs list ~</h3>
       </div>
     </>
   );

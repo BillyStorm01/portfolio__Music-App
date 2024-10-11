@@ -5,31 +5,30 @@
   max-width: 325px;
 }
 
-.offcanvas-header {
-  margin-bottom: 1rem;
-}
 
 .offcanvas-body {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--size-2xl);
-  justify-content: center;
-  text-align: center;
-  width: 100%; 
-  padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--size-2xl);
+    justify-content: flex-start; 
+    text-align: center;
+    width: 100%; 
+    padding: 0 .5rem 1rem .5rem;
+    overflow-y: auto;
 }
+
 
 .btn-close {
    background-color: var(--clr-rose);
 }
 
 .songs__ul {
-  display: flex;
-  flex-direction: column;
-  top: 44%;
-  padding: 0 .5em; 
-  position: relative;
-  margin: 1.8rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 .5em; 
+    margin: 1rem 0;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto; 
 }
 
 .songs__li {

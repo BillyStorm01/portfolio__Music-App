@@ -14,15 +14,22 @@
 }
 
 .image__container {
-  border-radius: 3rem;
-  border: 1px solid var(--clr-rose);
-  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.6);
-  position: absolute;
-  height: 13rem; 
-  width: 13rem; 
-  top: 24%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
+    border-radius: 3rem;
+    border: 1px solid var(--clr-rose);
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    position: absolute;
+    height: 13rem; 
+    width: 13rem; 
+    top: 24%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease; 
+}
+
+.image__container:hover {
+    transform: translate(-50%, -52%); 
 }
 
 .music__container-CS {
