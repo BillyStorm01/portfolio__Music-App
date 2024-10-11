@@ -6,12 +6,15 @@ import MusicContainer from "./music-container";
 const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlaying, currentSong, audioRef }) => {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
 
     useEffect(() => {
         const audioElement = audioRef.current;
         if (audioElement) {
             const updateTime = () => {
-                setCurrentTime(audioElement.currentTime);
+                if (!isDragging) {  // Only update time when not dragging
+                    setCurrentTime(audioElement.currentTime);
+                }
                 setDuration(audioElement.duration);
             };
             audioElement.addEventListener('timeupdate', updateTime);
@@ -21,7 +24,7 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
                 audioElement.removeEventListener('loadedmetadata', updateTime);
             };
         }
-    }, [audioRef]);
+    }, [audioRef, isDragging]);
 
     const handleProgressBarClick = (e) => {
         const progressBar = e.target;
@@ -32,13 +35,35 @@ const AudioControls = ({ handleLeft, playSong, handleRight, setIsPlaying, isPlay
         setCurrentTime(newTime);
     };
 
+    const handleMouseDown = () => {
+        setIsDragging(true);
+    };
+
+    const handleMouseUp = (e) => {
+        setIsDragging(false);
+        handleProgressBarClick(e);  // Set time after dragging is done
+    };
+
+    const handleMouseMove = (e) => {
+        if (isDragging) {
+            handleProgressBarClick(e);  // Update time as you drag
+        }
+    };
+
     const remainingTime = duration ? duration - currentTime : 0;
 
     return (
         <div className="lower__container">
             <MusicContainer currentSong={currentSong} />
             {/* Progress Bar Section */}
-            <div className="progress-container" onClick={handleProgressBarClick}>
+            <div
+                className="progress-container"
+                onClick={handleProgressBarClick}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={() => setIsDragging(false)}  // Stop dragging if the mouse leaves the area
+            >
                 <div className="progress" style={{ width: `${(currentTime / duration) * 100}%` }}></div>
             </div>
             <div className="time-container">

@@ -12,7 +12,9 @@ const OffCanvas = ({ songs, playSong }) => {
                 <ul className="songs__ul">
                     {songs.map(song => (
                         <li className="songs__li" key={song.id} onClick={() => playSong(song)} style={{ cursor: 'pointer' }}>
-                         {song.name} {/* Adjust the property to display the song name */}
+                            <button>
+                                {song.name} {/* Adjust the property to display the song name */}
+                            </button>
                         </li>
                     ))}
                 </ul>

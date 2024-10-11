@@ -5,6 +5,10 @@
   max-width: 325px;
 }
 
+.offcanvas-header {
+  margin-bottom: 1rem;
+}
+
 .offcanvas-body {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@
   justify-content: center;
   text-align: center;
   width: 100%; 
-  padding: 1rem; 
+  padding: 1rem;
 }
 
 .btn-close {
@@ -22,9 +26,10 @@
 .songs__ul {
   display: flex;
   flex-direction: column;
+  top: 44%;
   padding: 0 .5em; 
   position: relative;
-  margin-top: 1.8rem;
+  margin: 1.8rem 0;
 }
 
 .songs__li {
@@ -40,5 +45,5 @@
 }
 
 .songs__li:hover {
-  scale: 1;
+  background-color: var(--clr-slate400);
 }
