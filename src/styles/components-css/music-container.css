@@ -36,7 +36,7 @@
 }
 
 /* xxs */
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .music__container {
     height: 20rem;
     width: calc(20rem / 1.19);
@@ -57,7 +57,7 @@
 }
 
 /* xs */
-@media (min-width: 475px) {
+@media (min-width: 321px) and (max-width: 475px) {
   .music__container {
     height: 27rem;
     width: calc(27rem / 1.19);
@@ -76,7 +76,7 @@
 }
 
 /* sm */
-@media (min-width: 640px) {
+@media (min-width: 476px) and (max-width: 640px) {
   .music__container {
     height: 30rem;
     width: calc(30rem / 1.19);
@@ -91,7 +91,7 @@
 }
 
 /* md */
-@media (min-width: 768px) {
+@media (min-width: 641px) and (max-width: 768px) {
   .music__container {
     height: 32rem;
     width: calc(35rem / 1.19);
@@ -106,7 +106,7 @@
 }
 
 /* lg */
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
   .music__container {
     height: 34rem;
     width: calc(37rem / 1.19);
